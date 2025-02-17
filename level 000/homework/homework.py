@@ -9,10 +9,11 @@ def count_multiples(a, b, c):
     # ვიპოვოთ a-დან და b-დან, რომელია უმცირესი და რომელია უდიდესი
     lower, upper = min(a, b), max(a, b)  
     # გამოვითვალოთ უდიდესი ჯერადი
-    biggest_multiple = (upper // c) * c
+    upper = (upper // c) * c
     # გამოვითვალოთ რამდენჯერ ეტევა c მოცემულ დიაპაზონში(უმცირესი რიცხვიდან უდიდესი ჯერადის ჩათვლით)
-    return (biggest_multiple  - lower) // c + 1
+    return (upper  - lower) // c + 1
 
+# Test cases
 print(count_multiples(15, 3, 3)) # 3, 6, 9, 12, 15 --> 5
 print(count_multiples(-10, 10, 4)) # -8, -4, 0, 4, 8 --> 5
 print(count_multiples(-20, -5, 5)) # -20, -15, -10, -5 --> 4
@@ -25,6 +26,7 @@ def count_multiples2(a, b, c):
         return (b - a) // c
     return (b - a) // c + 1
 
+# Test cases
 print("==========================")
 print(count_multiples2(15, 3, 3)) # 3, 6, 9, 12, 15 --> 5
 print(count_multiples2(-10, 10, 4)) # -8, -4, 0, 4, 8 --> 5
